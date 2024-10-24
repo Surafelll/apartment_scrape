@@ -9,8 +9,13 @@ async function scrapeApartments() {
   const sourceWebsite = "https://www.apartments.com/chicago-il/";
 
   // Create folders if they don't exist
-  const jsonFolderPath = path.join(__dirname, "apartments_json");
-  const csvFolderPath = path.join(__dirname, "apartments_csv");
+  const baseFolderPath = path.join(__dirname, "data", "apartments.com");
+  const jsonFolderPath = path.join(baseFolderPath, "apartments_json");
+  const csvFolderPath = path.join(baseFolderPath, "apartments_csv");
+
+  if (!fs.existsSync(baseFolderPath)) {
+    fs.mkdirSync(baseFolderPath, { recursive: true });
+  }
 
   if (!fs.existsSync(jsonFolderPath)) {
     fs.mkdirSync(jsonFolderPath);
@@ -127,7 +132,7 @@ async function scrapeApartments() {
     }
   }
 
-  console.log(`Scraping completed. Data saved in the 'apartments_json' and 'apartments_csv' folders.`);
+  console.log(`Scraping completed. Data saved in the 'data/apartments.com/apartments_json' and 'data/apartments.com/apartments_csv' folders.`);
   await browser.close();
 }
 
