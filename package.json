@@ -1,0 +1,16 @@
+{
+  "name": "appartmen",
+  "version": "1.1.1",
+  "description": "Just for friend",
+  "main": "scrape.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1",
+    "start": "node scrape.js",
+    "file": "node"
+  },
+  "keywords": [
+    "scrape"
+  ],
+  "author": "surafel",
+  "license": "ISC"
+}
