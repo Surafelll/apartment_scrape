@@ -5,7 +5,6 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
 const options = [
   { name: "Apartment Scraper", file: "apartmentsScraper.js" },
   { name: "ZRS Apartments", file: "zrsapartments.js" },

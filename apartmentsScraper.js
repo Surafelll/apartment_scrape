@@ -34,7 +34,7 @@ async function scrapeApartments() {
 
   while (currentPage <= maxPages) {
     // Wait for the content to load
-    await page.waitForSelector(".searchResults", { timeout: 60000 });
+    await page.waitForSelector(".searchResults", { timeout: 6000000 });
 
     const newApartments = [];
     const apartmentElements = await page.$$(".placard");
@@ -120,7 +120,7 @@ async function scrapeApartments() {
         currentPage++;
         await page.waitForNavigation({
           waitUntil: "networkidle2",
-          timeout: 60000,
+          timeout: 6000000,
         });
       } catch (error) {
         console.error("Error during pagination:", error);
